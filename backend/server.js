@@ -20,9 +20,6 @@ const path = require('path');
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 
 // Health check
-app.get('/', (req, res) => {
-  res.json({ message: 'VendorVerse API is running' });
-});
 
 // Connect to MongoDB
 connectDB();
@@ -44,8 +41,14 @@ app.use('/api/reviews', reviewRoutes);
 // Serve frontend build
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get(/^(?!\/api).*/, (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
+
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  }
 });
 app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
