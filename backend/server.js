@@ -44,7 +44,7 @@ app.use('/api/reviews', reviewRoutes);
 // Serve frontend build
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get("*", (req, res) => {
+app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 app.use((err, req, res, next) => {
