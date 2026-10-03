@@ -75,15 +75,6 @@ Frontend:
 npm run dev
 ```
 
-## Screenshots
-
-Add screenshots of:
-
-* Home Page
-* Vendor Dashboard
-* Product Management Page
-* Storefront View
-
 ## Live Demo
 
 https://vendor-verse-ewx7.onrender.com/
@@ -100,7 +91,7 @@ https://vendor-verse-ewx7.onrender.com/
 
 Sonaji Lalith Charan
 
-LinkedIn:linkedin.com/in/lalith-charan-370709351
+LinkedIn:https://www.linkedin.com/in/lalithcharan-dev
 
 GitHub: https://github.com/lalithcharan962
 
